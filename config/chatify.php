@@ -56,7 +56,28 @@ return [
         'options' => [
             'cluster' => env('PUSHER_APP_CLUSTER'),
             'encrypted' => false,
+            'host' => env('APP_URL'),
+            'port' => 6001,
+            'scheme' => 'http',
+            'logToConsole' => false,
         ],
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Laravel-websocket js configuration 
+    |--------------------------------------------------------------------------
+    |
+    | This array includes all the configuration that required to use Laravel-websocket
+    | as a Pusher replacemen
+    |
+    */
+
+    'laravel-websocket-js' => [
+        'wsHost' => "window.location.hostname",
+        'wsPort' => "6001",
+        'forceTLS' => false,
+        'disableStats' => true,
     ],
 
     /*

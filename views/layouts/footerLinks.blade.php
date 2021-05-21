@@ -1,10 +1,17 @@
 <script src="https://js.pusher.com/5.0/pusher.min.js"></script>
 <script>
   // Enable pusher logging - don't include this in production
-  Pusher.logToConsole = true;
+  Pusher.logToConsole = {{ config('chatify.pusher.option.logToConsole') }};
   var pusher = new Pusher("{{ config('chatify.pusher.key') }}", {
     encrypted: true,
     cluster: "{{ config('chatify.pusher.options.cluster') }}",
+
+    //Laravel websocet configuration
+    wsHost: {{ config('chatify.laravel-websocket-js.wsHost') }},
+    wsPort: {{ config('chatify.laravel-websocket-js.wsPort') }},
+    forceTLS: {{ config('chatify.laravel-websocket-js.forceTLS') }},
+    disableStats: {{ config('chatify.laravel-websocket-js.disableStats') }},
+
     authEndpoint: '{{route("pusher.auth")}}',
     auth: {
         headers: {

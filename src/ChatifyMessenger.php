@@ -70,7 +70,11 @@ class ChatifyMessenger
             config('chatify.pusher.app_id'),
             [
                 'cluster' => config('chatify.pusher.options.cluster'),
-                'useTLS' => config('chatify.pusher.options.useTLS')
+                'useTLS' => config('chatify.pusher.options.useTLS'),
+                'encrypted' => config('chatify.pusher.options.encrypted'),
+                'host' => config('chatify.pusher.options.host'),
+                'port' => config('chatify.pusher.options.port'),
+                'scheme' => config('chatify.pusher.options.scheme')
             ]
         );
     }
