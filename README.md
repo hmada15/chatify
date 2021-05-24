@@ -16,9 +16,21 @@ At the end .. I promise that `(Chatify v2 will be amazing)`, so be patient â¤ï¸
 ## Laravel 8+ support
 Since this package currently (v1.0.1, v1.0.0) may not support Laravel 8+, But you can get it to work with Laravel 8+ after a few quite simple changes, as @lelu0 mentioned at https://github.com/munafio/chatify/issues/66#issuecomment-756083954
 
+## Add laravel-websockets as a Pusher replacement
+You can edit laravel-websockets configuration at chatify.php by publishing assets using
+``` 
+php artisan vendor:publish --tag=chatify-config
+```
+And don't forget to add the host and port configuration key to your config/broadcasting.php.
+
+Check here
+- laravel-websockets pusher configuration - [Click Here](https://beyondco.de/docs/laravel-websockets/basic-usage/pusher#pusher-configuration).
+
+
+
 # Requirements
 - PHP >=5.3.2.
-- Laravel >=5.4
+- Laravel >=5.4 to 7.0
 - Pusher Api Account.
 
 # Features
