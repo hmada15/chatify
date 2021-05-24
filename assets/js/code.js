@@ -464,8 +464,8 @@ function cancelUpdatingAvatar() {
  *-------------------------------------------------------------
  */
 
-// subscribe to the channel
-var channel = pusher.subscribe('private-chatify');
+// subscribe to the channel to listen for messages
+var channel = pusher.subscribe('private-chatify.' + auth_id);
 
 // Listen to messages, and append if data received
 channel.bind('messaging', function (data) {
@@ -483,6 +483,9 @@ channel.bind('messaging', function (data) {
         $('.messenger-list-item[data-contact=' + messenger.split('_')[1] + ']').find('tr>td>b').remove();
     }
 });
+
+// subscribe to the channel to listen for other events
+var channel = pusher.subscribe('private-chatify');
 
 // listen to typing indicator
 channel.bind('client-typing', function (data) {
