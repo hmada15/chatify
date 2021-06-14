@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Response;
 use Chatify\Http\Models\Message;
 use Chatify\Http\Models\Favorite;
 use Chatify\Facades\ChatifyMessenger as Chatify;
-use App\User;
+use App\Models\User;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Str;
 
@@ -78,7 +78,7 @@ class MessagesController extends Controller
 
         // User data
         if ($request['type'] == 'user') {
-            $fetch = User::where('id', $request['id'])->first();
+            $fetch = User::where('id', auth()->user()->id)->first();
         }
 
         // send the response

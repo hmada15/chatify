@@ -1,9 +1,9 @@
 <script src="https://js.pusher.com/5.0/pusher.min.js"></script>
 <script>
   // Enable pusher logging - don't include this in production
-  Pusher.logToConsole = {{ config('chatify.pusher.option.logToConsole') }};
+  Pusher.logToConsole = {{ config('chatify.pusher.options.logToConsole') }};
   var pusher = new Pusher("{{ config('chatify.pusher.key') }}", {
-    encrypted: true,
+    encrypted: {{ config('chatify.pusher.options.encrypted') }},
     cluster: "{{ config('chatify.pusher.options.cluster') }}",
 
     //Laravel websocet configuration
