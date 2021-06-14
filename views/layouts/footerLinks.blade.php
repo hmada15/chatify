@@ -5,7 +5,7 @@
   var pusher = new Pusher("{{ config('chatify.pusher.key') }}", {
     encrypted: {{ config('chatify.pusher.options.encrypted') }},
     cluster: "{{ config('chatify.pusher.options.cluster') }}",
-
+    
     //Laravel websocet configuration
     wsHost: {{ config('chatify.laravel-websocket-js.wsHost') }},
     wsPort: {{ config('chatify.laravel-websocket-js.wsPort') }},
