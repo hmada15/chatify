@@ -78,7 +78,7 @@ class MessagesController extends Controller
 
         // User data
         if ($request['type'] == 'user') {
-            $fetch = User::where('id', auth()->user()->id)->first();
+            $fetch = User::where('id', $request->id)->first();
         }
 
         // send the response
